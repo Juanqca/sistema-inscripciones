@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+body {
+    background-color: #f0f2f5;
+}
+/* Estilos del Menú */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a252f;
+    color: white;
+    padding: 15px 30px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+}
+.nav-links a.active, .nav-links a:hover {
+    color: #3498db;
+}
+
+/* Distribución de la página */
+.container {
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos del Perfil */
+.profile-card {
+    background: white;
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.avatar {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+.profile-info {
+    text-align: left;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 2;
+}
+

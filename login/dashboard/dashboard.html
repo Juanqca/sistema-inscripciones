@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Estudiante</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <!-- 1. MENÚ DE NAVEGACIÓN -->
+    <nav class="navbar">
+        <div class="logo">Sistema Inscripciones</div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Inicio</a></li>
+            <li><a href="#">Materias</a></li>
+            <li><a href="#">Horarios</a></li>
+            <li><a href="../login/login.html" id="logoutBtn">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- 2. PERFIL ESTUDIANTE -->
+        <aside class="profile-card">
+            <div class="avatar">👤</div>
+            <h3 id="studentName">Juan Carlos Torrez</h3>
+            <p class="role">Estudiante</p>
+            <div class="profile-info">
+                <p><strong>RUDE/ID:</strong> 8074123</p>
+                <p><strong>Carrera:</strong> Ingeniería de Sistemas</p>
+                <p><strong>Gestión:</strong> 2026</p>
+            </div>
+        </aside>
+
+        <!-- 3. ACCESOS DIRECTOS -->
+        <main class="main-content">
+            <h2>Accesos Directos</h2>
+            <div class="grid-accesos">
+                <div class="card-acceso">
+                    <h4>Inscripción de Materias</h4>
+                    <p>Agrega o modifica tus asignaturas para este periodo.</p>
+                    <button class="btn-acceso">Ir a Inscripciones</button>
+                </div>
+                <div class="card-acceso">
+                    <h4>Historial Académico</h4>
+                    <p>Revisa tus calificaciones y materias aprobadas.</p>
+                    <button class="btn-acceso">Ver Notas</button>
+                </div>
