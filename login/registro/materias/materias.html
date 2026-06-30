@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscripción de Materias</title>
+    <link rel="stylesheet" href="materias.css">
+</head>
+<body>
+    <div class="materias-container">
+        <h2>Oferta de Materias - Gestión 2026</h2>
+        <p class="instrucciones">Selecciona las materias que deseas inscribir para armar tu horario.</p>
+        
+        <table class="tabla-materias">
+            <thead>
+                <tr>
+                    <th>Materia</th>
+                    <th>Créditos</th>
+                    <th>Horario</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="listaMaterias">
+                </tbody>
+        </table>
+
+        <div class="resumen-inscripcion">
+            <h3>Resumen de Selección</h3>
+            <p>Total Créditos Seleccionados: <span id="totalCreditos">0</span></p>
+            <button id="btnConfirmar" class="btn-confirmar" disabled>Confirmar Inscripción</button>
+        </div>
+    </div>
+    <script src="materias.js"></script>
+</body>
+</html>
