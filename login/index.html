@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Universitario - Registro de Materias</title>
+    <style>
+        /* --- COLORES INSTITUCIONALES Y DISEÑO BASE --- */
+        :root {
+            --azul-institucional: #1a365d;
+            --azul-clarito: #2b6cb0;
+            --gris-fondo: #f7fafc;
+            --gris-borde: #e2e8f0;
+            --blanco: #ffffff;
+            --texto-oscuro: #2d3748;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--gris-fondo);
+            color: var(--texto-oscuro);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- MENÚ DE NAVEGACIÓN SUPERIOR --- */
+        .navbar {
+            background-color: var(--azul-institucional);
+            color: var(--blanco);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu li {
+            margin-left: 20px;
+        }
+
+        .nav-menu a {
+            color: var(--blanco);
+            text-decoration: none;
+            font-size: 0.95rem;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            background-color: var(--azul-clarito);
+        }
+
+        /* --- CONTENEDOR PRINCIPAL Y MAQUETACIÓN --- */
+        .main-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card-panel {
+            background: var(--blanco);
+            border-radius: 8px;
+            border: 1px solid var(--gris-borde);
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--azul-institucional);
+            margin-top: 0;
+            border-bottom: 2px solid var(--gris-borde);
+            padding-bottom: 10px;
+        }
+
+        .materia-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin: 12px 0;
+            background: var(--gris-fondo);
+            border: 1px solid var(--gris-borde);
+            border-radius: 6px;
+            text-align: left;
+        }
+
+        .materia-item label {
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .creditos-tag {
+            background-color: #ebf8ff;
+            color: #2b6cb0;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .btn-registrar {
+            background-color: var(--azul-institucional);
+            color: var(--blanco);
+            border: none;
+            padding: 14px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 20px;
+            transition: background 0.2s;
+        }
+
+        .btn-registrar:hover {
+            background-color: var(--azul-clarito);
+        }
+
+        /* --- SECCIÓN COMPROBANTE --- */
+        .comprobante {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px dashed #48bb78;
+            background-color: #f0fff4;
+            border-radius: 6px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">🏛️ Universidad Continental</div>
+        <ul class="nav-menu">
+            <li><a href="#" class="active">Inscripciones</a></li>
+            <li><a href="#">Mi Horario</a></li>
+            <li><a href="#">Historial</a></li>
+            <li><a href="#">Salir</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-container">
+        <div class="card-panel">
+            <h2>📝 Registro de Asignaturas Disponibles</h2>
+            
+            <div id="lista-materias">
+                <div class="materia-item">
+                    <label><input type="checkbox" class="materia-check" value="Matemática I"> Matemática I</label>
+                    <span class="creditos-tag">5 Créditos</span>
+                </div>
+                <div class="materia-item">
+                    <label><input type="checkbox" class="materia-check" value="Programación I"> Programación I</label>
+                    <span class="creditos-tag">4 Créditos</span>
+                </div>
+                <div class="materia-item">
+                    <label><input type="checkbox" class="materia-check" value="Física I"> Física I</label>
+                    <span class="creditos-tag">5 Créditos</span>
+                </div>
+                <div class="materia-item">
+                    <label><input type="checkbox" class="materia-check" value="Base de Datos"> Base de Datos</label>
+                    <span class="creditos-tag">4 Créditos</span>
+                </div>
+            </div>
+
+            <button id="btn-registrar" class="btn-registrar">Confirmar e Inscribir Materias</button>
+
+            <div id="comprobante" class="comprobante">
+                <h3 style="color: #38a169; margin-top: 0;">✅ Inscripción Exitosa</h3>
+                <p><strong>Número de Registro:</strong> <span id="num-registro" style="font-family: monospace; font-weight: bold;"></span></p>
+                <h4>🕒 Horario Asignado:</h4>
+                <div id="tabla-horario"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
