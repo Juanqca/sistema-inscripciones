@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Materias</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f4f6f9; padding: 20px; text-align: center; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .materia-item { display: flex; justify-content: space-between; padding: 10px; margin: 10px 0; border-bottom: 1px solid #ddd; text-align: left; }
+        .btn-registrar { background-color: #2ecc71; color: white; border: none; padding: 12px 25px; font-size: 1rem; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top: 20px; width: 100%; }
+        .btn-registrar:hover { background-color: #27ae60; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>📚 Selección de Materias Disponibles</h2>
+        
+        <div id="lista-materias">
+            <div class="materia-item">
+                <label><input type="checkbox" class="materia-check" value="Matemática I"> Matemática I (5 Créditos)</label>
+            </div>
+            <div class="materia-item">
+                <label><input type="checkbox" class="materia-check" value="Programación I"> Programación I (4 Créditos)</label>
+            </div>
+            <div class="materia-item">
+                <label><input type="checkbox" class="materia-check" value="Física I"> Física I (5 Créditos)</label>
+            </div>
+            <div class="materia-item">
+                <label><input type="checkbox" class="materia-check" value="Base de Datos"> Base de Datos (4 Créditos)</label>
+            </div>
+        </div>
+
+        <button id="btn-registrar" class="btn-registrar">📝 Registrar Materias</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
